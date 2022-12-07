@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miss Braidzz</title>
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header class="primary-header | padding-block-500">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="#"><img class="logo" src="media/logo.png" alt="Missbraidz"></a>
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+          <img class="menu-open" src="media/menu-open.svg" alt="Menu icon open" aria-hidden="true">
+          <img class="menu-close" src="media/menu-close.svg" alt="Menu icon close" aria-hidden="true"><span
+            class="visually-hidden">Menu</span></button>
+        <nav class="primary-navigation" id="primary-navigation">
+          <ul role="list" class="nav-list">
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Story</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="menu two-buttons">
+          <button class="button white | fs-button fw-regular">Cart</button>
+          <button class="button pink | fs-button fw-regular">Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </header>
+</body>
+
+<main>
+  <section>
+    <div class="container">
+      <div class="even-columns">
+        <div class="hero">
+          <div class="flow mobile-center">
+            <h1 class="primary-heading short-lines">Fabulous Braids for all ages</h1>
+            <p class="primary-body hide-on-mobile">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+              varius
+              enim in eros elementum tristique duis Cursus mi quis viverra ornare.</p>
+            <div class="two-buttons">
+              <button class="button pink | fs-button fw-regular">Book now</button>
+              <button class="button white | fs-button fw-regular">Events</button>
+            </div>
+          </div>
+          <div class="hide-on-mobile" style="padding-top: 100px">
+            <p class="primary-body">Trusted by Perths happiest kids!</p>
+          </div>
+        </div>
+        <div class="empty">
+          <img class="hero-image" src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg"
+            alt="Woman with white braided bun"></img>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="padding-block-900">
+    <div class="container">
+      <div class="centered flow">
+        <div class="centered flow">
+          <p class="bubble | mini-header">About us</p>
+          <h2 class="primary-heading">Perth locals that love hair</h2>
+          <p class="primary-body" data-width="wide">Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Suspendisse
+            varius enim
+            in eros elementum tristique duis Cursus mi quis viverra ornare.</p>
+        </div>
+        <div class="two-buttons">
+          <button class="button white | fs-button fw-regular">Our story</button>
+          <button class="button transparent | fs-button fw-regular">Contact us<img class="button-arrow"
+              src="media/arrow-right.png" alt="arrow right">
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="padding-block-900">
+    <div class="container">
+      <div class="centered flow" style="padding-bottom: var(--size-700)">
+        <p class="bubble | mini-header">Best sellers</p>
+        <h2 class="primary-heading">Our most popular services</h2>
+      </div>
+
+      <div class="carousel" style="margin-bottom: 50px">
+
+        <div class="carousel__track-container" style="gap: var(--size-600)">
+
+          <ul class="carousel__track even-columns">
+
+            <li class="carousel__slide current-slide | product-pane bg-neutral">
+              <img src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg">
+              <div>
+                <div class="product-columns">
+                  <p class="primary-body fw-semi-bold">Product 1</p>
+                  <p class="cost">$150</p>
+                </div>
+                <p class="secondary-body">Lorem ipsum dolor sit amet</p>
+                <button class="button white product">Shop now</button>
+              </div>
+            </li>
+
+            <li class="carousel__slide | product-pane bg-neutral">
+              <img src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg">
+              <div>
+                <div class="product-columns">
+                  <p class="primary-body fw-semi-bold">Product 2</p>
+                  <p class="cost">$150</p>
+                </div>
+                <p class="secondary-body">Lorem ipsum dolor sit amet</p>
+                <button class="button white product">Shop now</button>
+              </div>
+            </li>
+
+            <li class="carousel__slide | product-pane bg-neutral">
+              <img src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg">
+              <div>
+                <div class="product-columns">
+                  <p class="primary-body fw-semi-bold">Product 3</p>
+                  <p class="cost">$150</p>
+                </div>
+                <p class="secondary-body">Lorem ipsum dolor sit amet</p>
+                <button class="button white product">Shop now</button>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="carousel__nav">
+          <button class="carousel__indicator current-slide"></button>
+          <button class="carousel__indicator"></button>
+          <button class="carousel__indicator"></button>
+        </div>
+      </div>
+
+
+
+
+
+
+      <div class="carousel">
+        <div class="carousel__track-container">
+
+          <ul class="carousel__track even-columns">
+
+            <li class="carousel__slide current-slide product-pane service | flow bg-neutral">
+              <div class="centered">
+                <h2 class="fw-bold" style="font-size:var(--fs-700)">Best Selling Packages</h2>
+                <p class="secondary-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius
+                  enim
+                  in eros elementum
+                  tristique.</p>
+                <button class="button white">Book now</button>
+                <img class="bottom-rounded" src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg">
+              </div>
+            </li>
+
+            <li class="carousel__slide product-pane service | flow bg-neutral">
+              <div class="centered">
+                <h2 class="fw-bold" style="font-size:var(--fs-700)">Checkout our Workshops</h2>
+                <p class="secondary-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius
+                  enim
+                  in eros elementum
+                  tristique.</p>
+                <button class="button white">Book now</button>
+                <img class="bottom-rounded" src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg">
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="carousel__nav">
+          <button class="carousel__indicator current-slide"></button>
+          <button class="carousel__indicator"></button>
+        </div>
+
+      </div>
+
+
+
+    </div>
+  </section>
+
+  <section class="padding-block-900">
+    <div class="container">
+      <div class="centered | flow">
+        <p class="bubble | mini-header">How it works</p>
+        <h2 class="primary-heading">It's easy as 1, 2, 3</h2>
+        <p class="primary-body" data-width="wide">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          varius enim
+          in eros elementum tristique duis Cursus mi quis viverra ornare.</p>
+      </div>
+      <div style="padding-top: var(--size-900)">
+        <ul class="even-columns">
+          <li class="value-prop | centered flow">
+            <img class="circle" src="media/circle.svg"></img>
+            <h3 class="secondary-header">Value Prop 1</h3>
+            <p class="secondary-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+              vari enim in eros elementum tristique</p>
+          </li>
+          <li class="value-prop | centered flow">
+            <img class="circle" src="media/circle.svg"></img>
+            <h3 class="secondary-header">Value Prop 2</h3>
+            <p class="secondary-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+              varius enim in eros elementum tristique</p>
+          </li>
+          <li class="value-prop | centered flow">
+            <img class="circle" src="media/circle.svg"></img>
+            <h3 class="secondary-header">Value Prop 3</h3>
+            <p class="secondary-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+              varius
+              enim in eros elementum tristique</p>
+          </li>
+        </ul>
+      </div>
+  </section>
+
+  <section class="padding-block-900">
+    <div class="container">
+      <div class="even-columns">
+        <img class="square" data-position="left" src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg"
+          alt=""></img>
+        <div class="flow">
+          <p class="bubble | mini-header">Packages</p>
+          <h2 class="primary-heading">For the hair lovers</h2>
+          <p class="fs-primary-body fw-regular">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            varius enim
+            in eros elementum tristique duis Cursus mi quis viverra ornare.</p>
+          <div class="two-buttons">
+            <button class="button white | fs-button fw-regular">Our story</button>
+            <button class="button transparent | fs-button fw-regular">Explore<img class="button-arrow"
+                src="media/arrow-right.png" alt="arrow right">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="padding-block-900">
+    <div class="container">
+      <div class="even-columns">
+        <div class="flow">
+          <p class="bubble | mini-header">Workshops</p>
+          <h2 class="primary-heading">For the hair lovers</h2>
+          <p class="primary-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            varius enim
+            in
+            eros
+            elementum tristique
+            duis Cursus mi quis viverra ornare.</p>
+          <div class="two-buttons">
+            <button class="button white | fs-button fw-regular">Our story</button>
+            <button class="button transparent | fs-button fw-regular">Explore<img class="button-arrow"
+                src="media/arrow-right.png" alt="arrow right">
+            </button>
+          </div>
+        </div>
+        <img class="square" data-position="right" src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg"
+          alt=""></img>
+      </div>
+    </div>
+  </section>
+
+  <section class="padding-block-900">
+    <div class="container">
+      <div class="centered | flow">
+        <p class="bubble | mini-header">Testimonials</p>
+        <h2 class="primary-heading">What our customers say</h2>
+        <p class="primary-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="even-columns">
+        <div class="testimonial | flow bg-neutral">
+          <img src="media/5-stars.svg" alt="5 Stars">
+          <p class="secondary-body">"Nulla facilisi. Sed sit amet commodo quam, ac viverra turpis. Maecenas
+            vitae pulvinar lacus. Suspendisse cursus turpis
+            vel ante laoreet vehicula."</p>
+          <div class="avatar-columns">
+            <img class="circle" src="media/avatar-1.svg"></img>
+            <div>
+              <p class="primary-body fw-semi-bold">Happy customer</p>
+              <p class="secondary-body" style="margin-top: var(--flow-spacer-100)">Age</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial | flow bg-neutral">
+          <img src="media/5-stars.svg" alt="5 Stars">
+          <p class="secondary-body">"Nulla facilisi. Sed sit amet commodo quam, ac viverra turpis. Maecenas
+            vitae pulvinar lacus. Suspendisse cursus turpis
+            vel ante laoreet vehicula."</p>
+          <div class="avatar-columns">
+            <img class="circle" src="media/avatar-2.svg"></img>
+            <div>
+              <p class="primary-body fw-semi-bold">Happy customer</p>
+              <p class="secondary-body" style="margin-top: var(--flow-spacer-100)">Age</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial | flow bg-neutral">
+          <img src="media/5-stars.svg" alt="5 Stars">
+          <p class="secondary-body">"Nulla facilisi. Sed sit amet commodo quam, ac viverra turpis. Maecenas
+            vitae pulvinar lacus. Suspendisse cursus turpis
+            vel ante laoreet vehicula."</p>
+          <div class="avatar-columns">
+            <img class="circle" src="media/avatar-3.svg"></img>
+            <div>
+              <p class="primary-body fw-semi-bold">Happy customer</p>
+              <p class="secondary-body" style="margin-top: var(--flow-spacer-100)">Age</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-neutral padding-block-900">
+    <div class="container">
+      <div class="even-columns" style="align-items: start">
+        <div class="flow">
+          <h2 class="primary-heading">Frequently asked questions</h2>
+          <p class="primary-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            varius enim
+            in
+            eros elementum tristique duis Cursus mi quis viverra ornare.</p>
+          <button class="button pink | fs-button fw-regular">Contact us</button>
+        </div>
+        <ul class="accordian">
+          <li>
+            <button class="question" aria-controls="faq-toggle" aria-expanded="false">
+              <div class="flow left-align">
+                <h3 class="fs-secondary-body fw-semi-bold">What do you think?</h3>
+                <p class="faq-answer | secondary-body">This is the answer to my question</p>
+              </div>
+              <img src="media/add.svg">
+            </button>
+          </li>
+          <li>
+            <button class="question" aria-controls="faq-toggle" aria-expanded="false">
+              <div class="flow left-align">
+                <h3 class="fs-secondary-body fw-semi-bold">What do you think?</h3>
+                <p class="faq-answer | secondary-body">This is the answer to my question</p>
+              </div>
+              <img src="media/add.svg">
+            </button>
+          </li>
+          <li>
+            <button class="question" aria-controls="faq-toggle" aria-expanded="false">
+              <div class="flow left-align">
+                <h3 class="fs-secondary-body fw-semi-bold">What do you think?</h3>
+                <p class="faq-answer | secondary-body">This is the answer to my question</p>
+              </div>
+              <img src="media/add.svg">
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class=" | padding-block-700">
+    <div class="">
+      <img class="#" src="" alt=""></img>
+      <img class="#" src="" alt=""></img>
+      <img class="#" src="" alt=""></img>
+      <img class="#" src="" alt=""></img>
+      <img class="#" src="" alt=""></img>
+      <img class="#" src="" alt=""></img>
+      <img class="#" src="" alt=""></img>
+      <img class="#" src="" alt=""></img>
+      <img class="#" src="" alt=""></img>
+    </div>
+    <div class="">
+      <img class="#" src="" alt=""></img>
+      <img class="#" src="" alt=""></img>
+      <img class="#" src="" alt=""></img>
+      <img class="#" src="" alt=""></img>
+      <img class="#" src="" alt=""></img>
+      <img class="#" src="" alt=""></img>
+      <img class="#" src="" alt=""></img>
+      <img class="#" src="" alt=""></img>
+      <img class="#" src="" alt=""></img>
+    </div>
+  </section>
+</main>
+
+<footer class="primary-footer padding-block-900">
+  <div class="container">
+    <div class="primary-footer-wrapper padding-block-700">
+
+      <div>
+        <a href="#"><img class="logo" src="media/logo.png" alt="Missbraidz"></a>
+      </div>
+
+      <div>
+        <nav class="footer-nav | justify-right">
+          <ul class="footer-list" role="list" aria-label="Footer">
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Story</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="line"></div>
+
+      <div>
+        <a class="creator-tag" href="#">© Miss Braidzz by @Dakotahex</a>
+      </div>
+
+      <div>
+        <ul class="social-list | justify-right" role="list" aria-label="Social links">
+          <li><a aria-label="email" href="#">
+              <svg class="social-icon">
+                <use xlink:href="media/social-icons.svg#email"></use>
+              </svg></a>
+          </li>
+          <li><a aria-label="facebook" href="#">
+              <svg class="social-icon">
+                <use xlink:href="media/social-icons.svg#facebook"></use>
+              </svg></a>
+          </li>
+          <li><a aria-label="instagram" href="#">
+              <svg class="social-icon">
+                <use xlink:href="media/social-icons.svg#instagram"></use>
+              </svg></a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+
+</html>
