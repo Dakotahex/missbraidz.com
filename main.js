@@ -1,5 +1,28 @@
+// Stop Scroll covering content when using anchors
+const navHeight = document.querySelector('.primary-header').offsetHeight
+
+document.documentElement.style.setProperty('--scrol-padding', navHeight + 'px')
+
+
+
+// Hide nav-bar on scroll down, show on scroll up
+let lastScrollTop = 0;
+const primaryHeader = document.querySelector('.primary-header')
+
+window.addEventListener("scroll", function () {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  if (scrollTop > lastScrollTop) {
+    primaryHeader.style.top = "-" + navHeight + 'px';
+  } else {
+    primaryHeader.style.top = "0px";
+  }
+  lastScrollTop = scrollTop;
+})
+
+
+
+
 // Mobile header menu
-const primaryHeader = document.querySelector('.primary-header');
 const navToggle = document.querySelector(".mobile-nav-toggle");
 const primaryNav = document.querySelector(".primary-navigation");
 
@@ -16,6 +39,7 @@ navToggle.addEventListener('click', () => {
 
 // Changes for mobile viewing
 const mobileWidth = 800;    // This is 50em
+const viewportWidth = findViewportWidth()
 
 if (viewportWidth <= mobileWidth) {
   swapOrder()
@@ -27,7 +51,6 @@ function swapOrder() {
   var toSwap = document.getElementsByClassName("swapped");
   var items = toSwap[0].children;
   var elements = document.createDocumentFragment();
-  console.log(items)
 
   arr.forEach(function (idx) {
     elements.appendChild(items[idx].cloneNode(true));
@@ -43,19 +66,16 @@ function swapOrder() {
 
 // Carousel
 // Resize carousel slide height
-
-
 let carouselsNode = document.querySelectorAll('.carousel');
 const carousels = Array.prototype.slice.call(carouselsNode);
 
 const findAndSetHeights = () => {
-  const viewportWidth = findViewportWidth()
   if (viewportWidth <= mobileWidth) {
     // Find all first carousel sliders
-    firstSlides = new Array();
+    carouselChildren = new Array();
     carousels.forEach(findCurrentChild);
     // Set height of each parent class carousel
-    firstSlides.forEach(setCarouselHeight)
+    carouselChildren.forEach(setCarouselHeight)
   }
 }
 
@@ -65,16 +85,20 @@ function findViewportWidth() {
 
 const setCarouselHeight = (carouselSlide) => {
   const slideHeight = carouselSlide.offsetHeight;
+  console.log(slideHeight)
   carouselSlide.closest('.carousel').style.height = slideHeight * 0.0625 + 4 + 'rem';
 }
 
 const findCurrentChild = (div) => {
   b = div.querySelector('.current-slide');
-  firstSlides.push(b);
+  carouselChildren.push(b);
 }
 
 window.addEventListener("resize", findAndSetHeights);
 findAndSetHeights()
+
+
+
 
 // Carousel Functionality
 
