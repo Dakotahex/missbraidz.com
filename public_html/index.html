@@ -43,10 +43,10 @@
 <main>
   <section>
     <div class="container">
-      <div class="even-columns">
-        <div class="hero">
+      <div class="hero | even-columns" style="position: relative">
+        <div>
           <div class="flow mobile-center">
-            <h1 class="primary-heading short-lines">Fabulous Braids for all ages</h1>
+            <h1 class="primary-heading hero-heading short-lines">Fabulous Braids for all ages</h1>
             <p class="primary-body hide-on-mobile">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
               varius
               enim in eros elementum tristique duis Cursus mi quis viverra ornare.</p>
@@ -55,14 +55,9 @@
               <button class="button white | fs-button fw-regular">Events</button>
             </div>
           </div>
-          <div class="hide-on-mobile" style="padding-top: 100px">
-            <p class="primary-body">Trusted by Perths happiest kids!</p>
-          </div>
         </div>
-        <div class="empty">
-          <img class="hero-image" src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg"
-            alt="Woman with white braided bun"></img>
-        </div>
+        <img class="hero-image" src="media/girl-pink-background.jpg"
+          alt="Girl with Long Braids on Pink Background"></img>
       </div>
     </div>
   </section>
@@ -90,20 +85,20 @@
 
   <section class="padding-block-900">
     <div class="container">
-      <div class="centered flow" style="padding-bottom: var(--size-700)">
+      <div class="centered flow" style="padding-bottom: var(--size-800)">
         <p class="bubble | mini-header">Best sellers</p>
         <h2 class="primary-heading">Our most popular services</h2>
       </div>
 
-      <div class="carousel" style="margin-bottom: 50px">
+      <div class="carousel" style="margin-bottom: var(--size-600)">
 
         <div class="carousel__track-container" style="gap: var(--size-600)">
 
           <ul class="carousel__track even-columns">
 
             <li class="carousel__slide current-slide | product-pane bg-neutral">
-              <img src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg">
-              <div>
+              <img class="product-image" src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg">
+              <div class="product-content">
                 <div class="product-columns">
                   <p class="primary-body fw-semi-bold">Product 1</p>
                   <p class="cost">$150</p>
@@ -114,8 +109,8 @@
             </li>
 
             <li class="carousel__slide | product-pane bg-neutral">
-              <img src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg">
-              <div>
+              <img class="product-image" src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg">
+              <div class="product-content">
                 <div class="product-columns">
                   <p class="primary-body fw-semi-bold">Product 2</p>
                   <p class="cost">$150</p>
@@ -126,8 +121,8 @@
             </li>
 
             <li class="carousel__slide | product-pane bg-neutral">
-              <img src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg">
-              <div>
+              <img class="product-image" src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg">
+              <div class="product-content">
                 <div class="product-columns">
                   <p class="primary-body fw-semi-bold">Product 3</p>
                   <p class="cost">$150</p>
@@ -165,7 +160,8 @@
                   in eros elementum
                   tristique.</p>
                 <button class="button white">Book now</button>
-                <img class="bottom-rounded" src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg">
+                <img class="product-image bottom-rounded"
+                  src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg">
               </div>
             </li>
 
@@ -177,7 +173,8 @@
                   in eros elementum
                   tristique.</p>
                 <button class="button white">Book now</button>
-                <img class="bottom-rounded" src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg">
+                <img class="product-image bottom-rounded"
+                  src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg">
               </div>
             </li>
 
@@ -232,7 +229,7 @@
 
   <section class="padding-block-900">
     <div class="container">
-      <div class="even-columns">
+      <div class="swapped even-columns">
         <img class="square" data-position="left" src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg"
           alt=""></img>
         <div class="flow">
@@ -279,56 +276,78 @@
 
   <section class="padding-block-900">
     <div class="container">
-      <div class="centered | flow">
+      <div class="centered | flow" style="padding-bottom: var(--size-800)">
         <p class="bubble | mini-header">Testimonials</p>
         <h2 class="primary-heading">What our customers say</h2>
         <p class="primary-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
-      <div class="even-columns">
-        <div class="testimonial | flow bg-neutral">
-          <img src="media/5-stars.svg" alt="5 Stars">
-          <p class="secondary-body">"Nulla facilisi. Sed sit amet commodo quam, ac viverra turpis. Maecenas
-            vitae pulvinar lacus. Suspendisse cursus turpis
-            vel ante laoreet vehicula."</p>
-          <div class="avatar-columns">
-            <img class="circle" src="media/avatar-1.svg"></img>
-            <div>
-              <p class="primary-body fw-semi-bold">Happy customer</p>
-              <p class="secondary-body" style="margin-top: var(--flow-spacer-100)">Age</p>
-            </div>
-          </div>
+
+      <div class="carousel">
+
+        <div class="carousel__track-container">
+
+          <ul class="carousel__track even-columns vertical-allign-top">
+
+            <li class="testimonial | carousel__slide current-slide flow bg-neutral">
+              <img src="media/5-stars.svg" alt="5 Stars">
+              <p class="secondary-body">"Nulla facilisi. Sed sit amet commodo quam, ac viverra turpis. Maecenas
+                vitae pulvinar lacus. Suspendisse cursus turpis
+                vel ante laoreet vehicula. Suspendisse cursus turpis
+                vel ante laoreet vehicula."</p>
+              <div class="avatar-columns">
+                <img class="circle" src="media/avatar-1.svg"></img>
+                <div>
+                  <p class="primary-body fw-semi-bold">Happy customer</p>
+                  <p class="secondary-body" style="margin-top: var(--flow-spacer-100)">Age</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="testimonial | carousel__slide flow bg-neutral">
+              <img src="media/5-stars.svg" alt="5 Stars">
+              <p class="secondary-body">"Nulla facilisi. Sed sit amet commodo quam, ac viverra turpis. Maecenas
+                vitae pulvinar lacus. Suspendisse cursus turpis
+                vel ante laoreet vehicula.</p>
+              <div class="avatar-columns">
+                <img class="circle" src="media/avatar-2.svg"></img>
+                <div>
+                  <p class="primary-body fw-semi-bold">Happy customer</p>
+                  <p class="secondary-body" style="margin-top: var(--flow-spacer-100)">Age</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="testimonial | carousel__slide flow bg-neutral">
+              <img src="media/5-stars.svg" alt="5 Stars">
+              <p class="secondary-body">"Nulla facilisi. Sed sit amet commodo quam, ac viverra turpis. Maecenas
+                vitae pulvinar lacus. Suspendisse cursus turpis
+                vel ante laoreet vehicula."</p>
+              <p class="secondary-body">"Nulla facilisi. Sed sit amet commodo quam, ac viverra turpis. Maecenas
+                vitae pulvinar lacus. Suspendisse cursus turpis
+                vel ante laoreet vehicula."</p>
+              <div class="avatar-columns">
+                <img class="circle" src="media/avatar-3.svg"></img>
+                <div>
+                  <p class="primary-body fw-semi-bold">Happy customer</p>
+                  <p class="secondary-body" style="margin-top: var(--flow-spacer-100)">Age</p>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div class="carousel__track-container">
+
+        <div class="carousel__nav">
+          <button class="carousel__indicator current-slide"></button>
+          <button class="carousel__indicator"></button>
+          <button class="carousel__indicator"></button>
         </div>
-        <div class="testimonial | flow bg-neutral">
-          <img src="media/5-stars.svg" alt="5 Stars">
-          <p class="secondary-body">"Nulla facilisi. Sed sit amet commodo quam, ac viverra turpis. Maecenas
-            vitae pulvinar lacus. Suspendisse cursus turpis
-            vel ante laoreet vehicula."</p>
-          <div class="avatar-columns">
-            <img class="circle" src="media/avatar-2.svg"></img>
-            <div>
-              <p class="primary-body fw-semi-bold">Happy customer</p>
-              <p class="secondary-body" style="margin-top: var(--flow-spacer-100)">Age</p>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial | flow bg-neutral">
-          <img src="media/5-stars.svg" alt="5 Stars">
-          <p class="secondary-body">"Nulla facilisi. Sed sit amet commodo quam, ac viverra turpis. Maecenas
-            vitae pulvinar lacus. Suspendisse cursus turpis
-            vel ante laoreet vehicula."</p>
-          <div class="avatar-columns">
-            <img class="circle" src="media/avatar-3.svg"></img>
-            <div>
-              <p class="primary-body fw-semi-bold">Happy customer</p>
-              <p class="secondary-body" style="margin-top: var(--flow-spacer-100)">Age</p>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   </section>
 
-  <section class="bg-neutral padding-block-900">
+  <section class="faq bg-neutral">
     <div class="container">
       <div class="even-columns" style="align-items: start">
         <div class="flow">
@@ -372,33 +391,48 @@
     </div>
   </section>
 
-  <section class=" | padding-block-700">
-    <div class="">
-      <img class="#" src="" alt=""></img>
-      <img class="#" src="" alt=""></img>
-      <img class="#" src="" alt=""></img>
-      <img class="#" src="" alt=""></img>
-      <img class="#" src="" alt=""></img>
-      <img class="#" src="" alt=""></img>
-      <img class="#" src="" alt=""></img>
-      <img class="#" src="" alt=""></img>
-      <img class="#" src="" alt=""></img>
+  <section class="padding-block-700">
+
+    <div class="image-container">
+      <div class="image-wrapper">
+        <div>
+          <img class="loop-img" src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg" alt="">
+        </div>
+        <div>
+          <img class="loop-img" src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg" alt="">
+        </div>
+        <div>
+          <img class="loop-img" src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg" alt="">
+        </div>
+        <div>
+          <img class="loop-img" src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg" alt="">
+        </div>
+        <div>
+          <img class="loop-img" src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg" alt="">
+        </div>
+        <div>
+          <img class="loop-img" src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg" alt="">
+        </div>
+        <div>
+          <img class="loop-img" src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg" alt="">
+        </div>
+        <div>
+          <img class="loop-img" src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg" alt="">
+        </div>
+        <div>
+          <img class="loop-img" src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg" alt="">
+        </div>
+        <div>
+          <img class="loop-img" src="media/clarissa-carbungco-side-profile-white-braided-bun.jpg" alt="">
+        </div>
+      </div>
     </div>
-    <div class="">
-      <img class="#" src="" alt=""></img>
-      <img class="#" src="" alt=""></img>
-      <img class="#" src="" alt=""></img>
-      <img class="#" src="" alt=""></img>
-      <img class="#" src="" alt=""></img>
-      <img class="#" src="" alt=""></img>
-      <img class="#" src="" alt=""></img>
-      <img class="#" src="" alt=""></img>
-      <img class="#" src="" alt=""></img>
-    </div>
+
   </section>
+
 </main>
 
-<footer class="primary-footer padding-block-900">
+<footer class="primary-footer padding-block-700">
   <div class="container">
     <div class="primary-footer-wrapper padding-block-700">
 

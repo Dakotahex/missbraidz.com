@@ -11,22 +11,56 @@ navToggle.addEventListener('click', () => {
   primaryHeader.toggleAttribute('data-overlay');
 });
 
+
+
+
+// Changes for mobile viewing
+const mobileWidth = 800;    // This is 50em
+
+if (viewportWidth <= mobileWidth) {
+  swapOrder()
+}
+
+// Swapping the order of elements
+function swapOrder() {
+  var arr = [1, 0];
+  var toSwap = document.getElementsByClassName("swapped");
+  var items = toSwap[0].children;
+  var elements = document.createDocumentFragment();
+  console.log(items)
+
+  arr.forEach(function (idx) {
+    elements.appendChild(items[idx].cloneNode(true));
+  });
+
+  toSwap[0].innerHTML = null;
+  toSwap[0].appendChild(elements);
+}
+
+
+
+
+
 // Carousel
 // Resize carousel slide height
-const mobileWidth = 800;    // This is 50em
+
 
 let carouselsNode = document.querySelectorAll('.carousel');
 const carousels = Array.prototype.slice.call(carouselsNode);
 
 const findAndSetHeights = () => {
-  const viewportWidth = window.innerWidth;
-  if (viewportWidth < mobileWidth) {
+  const viewportWidth = findViewportWidth()
+  if (viewportWidth <= mobileWidth) {
     // Find all first carousel sliders
     firstSlides = new Array();
-    carousels.forEach(findFirstChild);
+    carousels.forEach(findCurrentChild);
     // Set height of each parent class carousel
     firstSlides.forEach(setCarouselHeight)
   }
+}
+
+function findViewportWidth() {
+  return window.innerWidth;
 }
 
 const setCarouselHeight = (carouselSlide) => {
@@ -34,8 +68,8 @@ const setCarouselHeight = (carouselSlide) => {
   carouselSlide.closest('.carousel').style.height = slideHeight * 0.0625 + 4 + 'rem';
 }
 
-const findFirstChild = (div) => {
-  b = div.querySelector('.carousel__slide');
+const findCurrentChild = (div) => {
+  b = div.querySelector('.current-slide');
   firstSlides.push(b);
 }
 
@@ -73,6 +107,7 @@ const selectDomElements = (parent) => {
 
     moveToSlide(track, currentSlide, targetSlide);
     updateDots(currentDot, targetDot);
+    findAndSetHeights()
   })
 
 
@@ -134,4 +169,36 @@ if (document.querySelector('.question')) {
       }
     })
   })
+}
+
+// Loop
+const imageWrapper = document.querySelector('.image-wrapper')
+const imageItems = document.querySelectorAll('.image-wrapper > *')
+const imageLength = imageItems.length
+
+// Determines how many images are shown
+const perView = Math.ceil(findViewportWidth() / 200)
+
+let totalScroll = 0
+const delay = 2000
+
+imageWrapper.style.setProperty('--per-view', perView)
+for (let i = 0; i < perView; i++) {
+  imageWrapper.insertAdjacentHTML('beforeend', imageItems[i].outerHTML)
+}
+
+let autoScroll = setInterval(scrolling, delay)
+
+function scrolling() {
+  totalScroll++
+  if (totalScroll == imageLength + 1) {
+    clearInterval(autoScroll)
+    totalScroll = 1
+    imageWrapper.style.transition = '0s'
+    imageWrapper.style.left = '0'
+    autoScroll = setInterval(scrolling, delay)
+  }
+  const widthEl = document.querySelector('.image-wrapper > :first-child').offsetWidth + 24
+  imageWrapper.style.left = `-${totalScroll * widthEl}px`
+  imageWrapper.style.transition = '.9s'
 }
