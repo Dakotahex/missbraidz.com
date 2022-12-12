@@ -85,7 +85,6 @@ function findViewportWidth() {
 
 const setCarouselHeight = (carouselSlide) => {
   const slideHeight = carouselSlide.offsetHeight;
-  console.log(slideHeight)
   carouselSlide.closest('.carousel').style.height = slideHeight * 0.0625 + 4 + 'rem';
 }
 
