@@ -81,7 +81,6 @@
 }
 
 body {
-  overflow-x: hidden;
   font-size: var(--fs-primary-body);
   font-family: var(--ff-body);
   color: var(--clr-primary-400);
@@ -90,6 +89,7 @@ body {
 section {
   position: relative;
   height: 100%;
+  overflow-x: hidden;
 }
 
 .primary-heading {
