@@ -1,7 +1,7 @@
 :root {
   --clr-accent-one-400: #FFA7A7;
   --clr-accent-two-400: #EDEBF7;
-  --clr-accent-three-400: #CB4F8D;
+  --clr-accent-three-400: #6FF4BC;
 
   --clr-primary-400: rgba(0, 0, 0);
   --clr-primary-100: rgba(0, 0, 0, 0.6);
@@ -164,6 +164,10 @@ img {
   background-color: var(--clr-accent-one-400);
   border-radius: 30px;
   width: fit-content;
+}
+
+.button.green {
+  background-color: var(--clr-accent-three-400);
 }
 
 .bubble {
@@ -329,7 +333,7 @@ html {
   }
 
   .hero-image {
-    margin-top: var(--size-600);
+    margin-top: var(--size-800);
     border-radius: 40px 0 0 40px;
     width: 95%;
     justify-self: end;
@@ -371,7 +375,7 @@ html {
 
 .bottom-rounded {
   border-radius: 0 0 var(--border-radius-400) var(--border-radius-400);
-  aspect-ratio: 1/1;
+  aspect-ratio: 3/2;
 }
 
 /* Carousel */
@@ -507,6 +511,7 @@ html {
 
 .faq {
   padding: var(--size-900) 0;
+  margin-top: var(--size-900)
 }
 
 @media (max-width: 50em) {
@@ -538,6 +543,32 @@ html {
   height: 100%;
   display: block;
   border-radius: var(--border-radius-400);
+}
+
+/* Form */
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: var(--size-600);
+  background-color: var(--clr-neutral-100);
+  border-radius: var(--border-radius-400);
+  margin-top: var(--size-800);
+}
+
+.label-input {
+  display: flex;
+  flex-direction: column;
+}
+
+label {}
+
+input,
+textarea {
+  border: var(--border-300);
+  border-radius: var(--border-radius-400);
+  min-height: 30px;
+  padding: var(--size-300);
+  width: 100%;
 }
 
 /* Footer navigation */
@@ -692,7 +723,7 @@ html {
 }
 
 .container[data-width="narrow"] {
-  max-width: 90%;
+  max-width: 80%;
 }
 
 .even-columns {
@@ -737,6 +768,11 @@ html {
 }
 
 .justify-right {
+  justify-content: end;
+}
+
+.align-right {
+  display: flex;
   justify-content: end;
 }
 
@@ -825,8 +861,8 @@ html {
   }
 }
 
-.border-100 {
-  border-width: 0.5px;
+/* .border-100 {
+  border: 0.5px solid var(--clr-neutral-600);
 }
 
 .border-400 {
@@ -835,4 +871,4 @@ html {
 
 .border-600 {
   border-width: 2px;
-}
+} */
