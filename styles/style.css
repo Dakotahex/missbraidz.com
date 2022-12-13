@@ -2,6 +2,7 @@
   --clr-accent-one-400: #FFA7A7;
   --clr-accent-two-400: #EDEBF7;
   --clr-accent-three-400: #6FF4BC;
+  --clr-accent-three-600: #27f09c;
 
   --clr-primary-400: rgba(0, 0, 0);
   --clr-primary-100: rgba(0, 0, 0, 0.6);
@@ -52,7 +53,7 @@
   --size-950: 8rem;
 
   --border-400: 0.5px solid var(--clr-neutral-400);
-  --border-300: 0.5px solid var(--clr-neutral-300);
+  --border-300: 0.5px solid var(--clr-neutral-100);
   --border-radius-200: 10px;
   --border-radius-400: 20px;
 
@@ -560,15 +561,35 @@ html {
   flex-direction: column;
 }
 
-label {}
+label {
+  font-size: var(--fs-secondary-body);
+  font-weight: var(--fw-regular);
+}
 
-input,
+input[type=text],
+select,
 textarea {
   border: var(--border-300);
   border-radius: var(--border-radius-400);
   min-height: 30px;
   padding: var(--size-300);
   width: 100%;
+  resize: vertical;
+}
+
+input[type=text]:focus,
+textarea:focus {
+  outline: none !important;
+  border: 0.5px solid var(--clr-neutral-300);
+}
+
+input[type=submit] {
+  background-color: var(--clr-accent-three-400);
+  width: 100%;
+}
+
+input[type=submit]:hover {
+  background-color: var(--clr-accent-three-600);
 }
 
 /* Footer navigation */
