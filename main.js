@@ -112,7 +112,7 @@ const selectDomElements = (parent) => {
 
   // arrange slides next to one another
   const setSlidePosition = (slide, index) => {
-    slide.style.left = slideWidth * index + 20 * index + 'px';
+    slide.style.left = slideWidth * index + 50 * index + 'px';
   }
   slides.forEach(setSlidePosition);
 
