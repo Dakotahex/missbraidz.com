@@ -54,6 +54,42 @@ const checkMenuStatus = function () {
 
 window.addEventListener("scroll", moveNavbar)
 
+
+// Buttons Linking
+let allButtons = document.querySelectorAll('.button');
+
+const sendToLink = function (link) {
+  if (link === 'Our story') {
+    window.location.href = "http://www.missbraidz.com/about.html"
+  } else if (link === 'Contact us') {
+    window.location.href = "http://www.missbraidz.com/contact.html"
+  } else if (link === 'Explore' || 'Shop now') {
+    window.location.href = "http://www.missbraidz.com/services.html"
+  } else if (link === 'Book now') {
+    window.location.href = "http://www.missbraidz.com/bookings.html"
+  } else if (link === 'Subscribe') {
+    console.log(window.location.href)
+    document.location.href = window.location.href + '#subscribe'
+  } else {
+    return;
+  }
+}
+
+console.log(window.location.href)
+
+allButtons.forEach(button => {
+  button.addEventListener('click', (event) => {
+    let link = event.explicitOriginalTarget.childNodes[0].data
+    console.log(link)
+    sendToLink(link);
+  })
+})
+
+
+
+
+
+
 // Changes for mobile viewing
 const mobileWidth = 800;    // This is 50em
 const viewportWidth = findViewportWidth()
