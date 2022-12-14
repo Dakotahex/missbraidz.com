@@ -79,8 +79,8 @@ console.log(window.location.href)
 
 allButtons.forEach(button => {
   button.addEventListener('click', (event) => {
-    let link = event.explicitOriginalTarget.childNodes[0].data
-    console.log(link)
+    let link = event.explicitOriginalTarget.childNodes[0].data;
+    console.log(link);
     sendToLink(link);
   })
 })

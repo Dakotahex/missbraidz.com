@@ -5,6 +5,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)\.html$ /$1 [L,R=302]
 
-RewriteCond %{REQUEST_URI} !^/(robots\.txt|favicon\.ico|sitemap\.xml)$
-RewriteCond %{HTTP_HOST} !^www\.missbraidz\.com$ [NC]
-RewriteRule ^(.*)$ https://www.missbraidz.com/$1 [R=302,L]
+## RewriteCond %{REQUEST_URI} !^/(robots\.txt|favicon\.ico|sitemap\.xml)$
+## RewriteCond %{HTTP_HOST} !^www\.missbraidz\.com$ [NC]
+## RewriteRule ^(.*)$ https://www.missbraidz.com/$1 [R=302,L]
