@@ -9,7 +9,7 @@ RewriteRule ^([^/]+)/$ http://missbraidz.com/$1 [R=301,L]
 
 # Redirect external .html requests to extensionless url
 RewriteCond %{THE_REQUEST} ^(.+)\.html([#?][^\ ]*)?\ HTTP/
-RewriteRule ^(.+)\.html$ http://missbraidz.com/folder/$1 [R=301,L]
+RewriteRule ^(.+)\.html$ http://missbraidz.com/$1 [R=301,L]
 
 # Resolve .html file for extensionless html urls
 RewriteRule ^([^/.]+)$ $1.html[L]
