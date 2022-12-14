@@ -52,8 +52,9 @@
   --size-900: 6rem;
   --size-950: 8rem;
 
+  --border-600: 0.5px solid var(--clr-neutral-600);
   --border-400: 0.5px solid var(--clr-neutral-400);
-  --border-300: 0.5px solid var(--clr-neutral-100);
+  --border-300: 0.5px solid var(--clr-neutral-300);
   --border-radius-200: 10px;
   --border-radius-400: 20px;
 
@@ -292,6 +293,14 @@ html {
   }
 
   .mobile-nav-toggle .menu-close {
+    display: none;
+  }
+
+  .mobile-nav-toggle .menu-close[data-visible] {
+    display: inline;
+  }
+
+  .mobile-nav-toggle .menu-open[data-hidden] {
     display: none;
   }
 
@@ -553,7 +562,7 @@ html {
   padding: var(--size-600);
   background-color: var(--clr-neutral-100);
   border-radius: var(--border-radius-400);
-  width: 100%;
+  width: 90%;
   max-width: 600px;
   margin-top: var(--size-800);
 }
@@ -582,11 +591,12 @@ textarea {
 input[type=text]:focus,
 textarea:focus {
   outline: none !important;
-  border: 0.5px solid var(--clr-neutral-300);
+  border: var(--border-600);
 }
 
 input[type=submit] {
   background-color: var(--clr-accent-three-400);
+  border: var(--border-300);
   width: 100%;
 }
 
@@ -698,7 +708,7 @@ input[type=submit]:hover {
 }
 
 .social-list a:is(:hover, :focus) .social-icon {
-  color: var(--clr-accent-three-400);
+  color: var(--clr-accent-one-400);
 }
 
 .social-list a {
@@ -874,7 +884,7 @@ input[type=submit]:hover {
   padding-block: var(--size-950);
 }
 
-.padding-bottom-900 {
+.bottom-padding-950 {
   padding-bottom: var(--size-950);
 }
 

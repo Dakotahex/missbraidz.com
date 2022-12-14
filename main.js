@@ -1,7 +1,25 @@
-// Stop Scroll covering content when using anchors
-const navHeight = document.querySelector('.primary-header').offsetHeight
+// Mobile header menu
+const navToggle = document.querySelector(".mobile-nav-toggle");
+const primaryNav = document.querySelector(".primary-navigation");
+const menuOpen = document.querySelector('.menu-open')
+const menuClose = document.querySelector('.menu-close')
 
-document.documentElement.style.setProperty('--scrol-padding', navHeight + 'px')
+navToggle.addEventListener('click', () => {
+  primaryNav.hasAttribute("data-visible")
+    ? navToggle.setAttribute('aria-expanded', false)
+    : navToggle.setAttribute('aria-expanded', true);
+  primaryNav.toggleAttribute("data-visible");
+  menuClose.toggleAttribute("data-visible");
+  menuOpen.toggleAttribute("data-hidden");
+  primaryHeader.toggleAttribute('data-overlay');
+  checkMenuStatus();
+});
+
+
+// Stop Scroll covering content when using anchors
+const navHeight = document.querySelector('.primary-header').offsetHeight;
+
+document.documentElement.style.setProperty('--scroll-padding', navHeight + 'px');
 
 
 
@@ -9,7 +27,7 @@ document.documentElement.style.setProperty('--scrol-padding', navHeight + 'px')
 let lastScrollTop = 0;
 const primaryHeader = document.querySelector('.primary-header')
 
-window.addEventListener("scroll", function () {
+const moveNavbar = function () {
   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   if (scrollTop > lastScrollTop) {
     primaryHeader.style.top = "-" + navHeight + 'px';
@@ -17,25 +35,24 @@ window.addEventListener("scroll", function () {
     primaryHeader.style.top = "0px";
   }
   lastScrollTop = scrollTop;
-})
+};
 
 
+// While mobile menu is open stop navbar from moving.
+const checkMenuStatus = function () {
+  let menuStatus = menuClose.hasAttribute("data-visible");
+  console.log(menuStatus)
 
+  if (menuStatus == true) {
+    window.removeEventListener("scroll", moveNavbar)
+    console.log('not moving navbar')
+  } else {
+    window.addEventListener("scroll", moveNavbar)
+    console.log('moving navbar')
+  }
+}
 
-// Mobile header menu
-const navToggle = document.querySelector(".mobile-nav-toggle");
-const primaryNav = document.querySelector(".primary-navigation");
-
-navToggle.addEventListener('click', () => {
-  primaryNav.hasAttribute("data-visible")
-    ? navToggle.setAttribute('aria-expanded', false)
-    : navToggle.setAttribute('aria-expanded', true);
-  primaryNav.toggleAttribute("data-visible");
-  primaryHeader.toggleAttribute('data-overlay');
-});
-
-
-
+window.addEventListener("scroll", moveNavbar)
 
 // Changes for mobile viewing
 const mobileWidth = 800;    // This is 50em
@@ -49,6 +66,9 @@ if (viewportWidth <= mobileWidth) {
 function swapOrder() {
   var arr = [1, 0];
   var toSwap = document.getElementsByClassName("swapped");
+  if (toSwap[0] === undefined) {
+    return;
+  }
   var items = toSwap[0].children;
   var elements = document.createDocumentFragment();
 
