@@ -69,7 +69,7 @@ const sendToLink = function (link) {
     window.location.href = "http://www.missbraidz.com/bookings.html"
   } else if (link === 'Subscribe') {
     console.log(window.location.href)
-    document.location.href = window.location.href + '#subscribe'
+    document.location.href = window.location.href + "#subscribe"
   } else {
     return;
   }
