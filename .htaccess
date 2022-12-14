@@ -1,24 +1,13 @@
-SetEnv SERVER_ADMIN dakota.colborne@gmail.com
+SetEnv SERVER_ADMIN 'dakota.colborne@gmail.com'
 
+# mod_rewrite starts here
+RewriteEngine on
 
-RewriteEngine On
-
-# remove trailing slash
+# Does not apply to existing directories, meaning that if the folder exists on the server then don't change anything and don't run the rule
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^/]+)/$ http://missbraidz.com/$1 [R=301,L]
 
-# Redirect external .html requests to extensionless url
-RewriteCond %{THE_REQUEST} ^(.+)\.html([#?][^\ ]*)?\ HTTP/
-RewriteRule ^(.+)\.html$ http://missbraidz.com/$1 [R=301,L]
+# Check for file in direcotry with .html extension
+RewriteCond %{REQUEST_FILENAME}\.html -f
 
-# Resolve .html file for extensionless html urls
-RewriteRule ^([^/.]+)$ $1.html[L]
-
-## Swith 302 to 301 when website is finished
-# RewriteCond %{REQUEST_FILENAME} !-f
-# RewriteCond %{REQUEST_FILENAME} !-d
-# RewriteRule ^(.*)\.html$ /$1 [L,R=302]
-
-# RewriteCond %{REQUEST_URI} !^/(robots\.txt|favicon\.ico|sitemap\.xml)$
-# RewriteCond %{HTTP_HOST} !^www\.missbraidz\.com$ [NC]
-# RewriteRule ^(.*)$ https://www.missbraidz.com/$1 [R=302,L]
+# Here we show the page witb .html extension
+RewriteRule ^(.*)$ $1.html [NC, L]
