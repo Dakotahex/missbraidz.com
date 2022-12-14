@@ -5,7 +5,7 @@ RewriteEngine On
 
 # remove trailing slash
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^/]+)/$ http://missbraidz.com/folder/$1 [R=301,L]
+RewriteRule ^([^/]+)/$ http://missbraidz.com/$1 [R=301,L]
 
 # Redirect external .html requests to extensionless url
 RewriteCond %{THE_REQUEST} ^(.+)\.html([#?][^\ ]*)?\ HTTP/
