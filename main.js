@@ -168,7 +168,7 @@ const selectDomElements = (parent) => {
   dotsNav.addEventListener('click', e => {
     // What indicator was clicked
     const targetDot = e.target.closest('button');
-    console.log(targetDot)
+    console.log(targetDot);
 
     if (!targetDot) return;
 
@@ -182,7 +182,7 @@ const selectDomElements = (parent) => {
   const findTargetDot = function (parent, num) {
     let ans;
     let x = parent.querySelector(".carousel__nav")
-    let y = x.querySelector(".currentSlide")
+    let y = x.querySelector(".current-slide")
     if (num > 0) {
       ans = y.nextElementSibling;
     } else {
@@ -240,19 +240,19 @@ const selectDomElements = (parent) => {
 
   function checkDirection() {
     if (touchendX < touchstartX) {
-      alert('swiped left!');
+      // alert('swiped left!');
       targetDot = findTargetDot(parent, 1)
     };
 
     if (touchendX > touchstartX) {
-      alert('swiped right!');
+      // alert('swiped right!');
       targetDot = findTargetDot(parent, 0)
     };
 
     if (!targetDot) {
       alert('no target dot found');
     };
-    executeMovement(targetDot)
+    executeMovement(targetDot);
   };
 
   parent.addEventListener('touchstart', e => {
