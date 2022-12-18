@@ -242,14 +242,16 @@ const selectDomElements = (parent) => {
     if (touchendX < touchstartX) {
       alert('swiped left!');
       targetDot = findTargetDot(1)
-      if (!targetDot) alert('no target dot found');
     };
 
     if (touchendX > touchstartX) {
       alert('swiped right!');
       targetDot = findTargetDot(0)
-      if (!targetDot) alert('no target dot found');
     };
+
+    if (!targetDot) {
+      alert('no target dot found');
+    }
     executeMovement(targetDot)
   };
 
