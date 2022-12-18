@@ -388,18 +388,7 @@ html {
 }
 
 /* Carousel */
-.carousel__button,
-.carousel__nav {
-  display: none;
-}
-
 @media(max-width: 50em) {
-
-  .carousel__button,
-  .carousel__nav {
-    display: block;
-  }
-
   .carousel {
     position: relative;
     width: 90%;
@@ -417,30 +406,6 @@ html {
     bottom: 0;
     width: 100%;
     height: fit-content;
-  }
-
-  .carousel__nav {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    padding: 20px 0;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    transform: transform 300ms ease-in;
-  }
-
-  .carousel__indicator {
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    border: 0 none var(--clr-neutral-400);
-    cursor: pointer;
-  }
-
-  .carousel__indicator.current-slide {
-    background: var(--clr-neutral-600);
   }
 }
 

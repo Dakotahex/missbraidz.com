@@ -153,9 +153,6 @@ findAndSetHeights()
 const selectDomElements = (parent) => {
   const track = parent.querySelector('.carousel__track');
   const slides = Array.from(track.children);
-  // const dotsNav = parent.querySelector('.carousel__nav');
-  // const dots = Array.from(dotsNav.children);
-
   const slideWidth = slides[0].getBoundingClientRect().width;
 
   // arrange slides next to one another
@@ -164,16 +161,6 @@ const selectDomElements = (parent) => {
   }
   slides.forEach(setSlidePosition);
 
-  // When i click the nav indicators move to that slide
-  // dotsNav.addEventListener('click', e => {
-  //   // What indicator was clicked
-  //   const targetDot = e.target.closest('button');
-  //   console.log(targetDot);
-
-  //   if (!targetDot) return;
-
-  //   executeMovement(targetDot);
-  // });
   let targetDot;
 
   const findTargetSlide = function (parent, num) {
@@ -190,9 +177,6 @@ const selectDomElements = (parent) => {
 
   const executeMovement = function (targetSlide) {
     currentSlide = findCurrentSlide(track);
-    // currentDot = findCurrentDot(dots);
-    // targetIndex = findTargetIndex(dots, targetDot);
-    // targetSlide = findTargetSlide(slides, targetIndex);
 
     moveToSlide(track, currentSlide, targetSlide);
     findAndSetHeights();
@@ -202,22 +186,6 @@ const selectDomElements = (parent) => {
     return track.querySelector('.current-slide');
   };
 
-  // const findCurrentDot = function (dots) {
-  //   return dotsNav.querySelector('.current-slide');
-  // };
-
-  // const findTargetIndex = function (dots, targetDot) {
-  //   return dots.findIndex(dot => dot === targetDot);
-  // };
-
-  // const findTargetSlide = function (slides, targetIndex) {
-  //   return slides[targetIndex];
-  // };
-
-
-
-
-
   // Move slider to target slide
   const moveToSlide = (track, currentSlide, targetSlide) => {
     track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
@@ -225,23 +193,16 @@ const selectDomElements = (parent) => {
     targetSlide.classList.add('current-slide');
   };
 
-  // const updateDots = (currentDot, targetDot) => {
-  //   currentDot.classList.remove('current-slide');
-  //   targetDot.classList.add('current-slide');
-  // };
-
   // When a user swipes left or right
   let touchstartX = 0;
   let touchendX = 0;
 
   function checkDirection() {
     if (touchendX < touchstartX) {
-      // alert('swiped left!');
       targetSlide = findTargetSlide(parent, 1)
     };
 
     if (touchendX > touchstartX) {
-      // alert('swiped right!');
       targetSlide = findTargetSlide(parent, 0)
     };
 
