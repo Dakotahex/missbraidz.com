@@ -186,7 +186,7 @@ const selectDomElements = (parent) => {
       ans = y.previousElementSibling;
     };
     return ans
-  }
+  };
 
   const executeMovement = function (targetSlide) {
     currentSlide = findCurrentSlide(track);
@@ -245,9 +245,8 @@ const selectDomElements = (parent) => {
       targetSlide = findTargetSlide(parent, 0)
     };
 
-    if (!targetDot) {
-      alert('no target dot found');
-    };
+    if (!targetDot) return;
+
     executeMovement(targetSlide);
   };
 
