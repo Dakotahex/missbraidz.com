@@ -73,20 +73,20 @@ const sendToLink = function (link) {
     return;
   } else if (link === 'Cart') {
     return;
+  } else if (link === 'Go back') {
+    window.location.href = "javascript:history.back()"
   } else {
     return;
   };
 };
-
-console.log(window.location.href)
 
 allButtons.forEach(button => {
   button.addEventListener('click', (event) => {
     let link = event.explicitOriginalTarget.childNodes[0].data;
     console.log(link);
     sendToLink(link);
-  })
-})
+  });
+});
 
 
 
@@ -243,47 +243,51 @@ if (document.querySelector('.question')) {
 
       // Check for child element
       if (i.target.parentNode.querySelector('.faq-answer')) {
-        let faqAnswer = i.target.parentNode.querySelector('.faq-answer')
+        let faqAnswer = i.target.parentNode.querySelector('.faq-answer');
         faqAnswer.hasAttribute("data-visible")
           ? e.setAttribute('aria-expanded', false)
           : e.setAttribute('aria-expanded', true);
         faqAnswer.toggleAttribute('data-visible');
-      }
-    })
-  })
-}
+      };
+    });
+  });
+};
 
 
 
 
 // Loop
-const imageWrapper = document.querySelector('.image-wrapper')
-const imageItems = document.querySelectorAll('.image-wrapper > *')
-const imageLength = imageItems.length
+const imageWrapper = document.querySelector('.image-wrapper');
 
-// Determines how many images are shown
-const perView = Math.ceil(findViewportWidth() / 200)
+if (imageWrapper != null) {
+  const imageItems = document.querySelectorAll('.image-wrapper > *');
+  const imageLength = imageItems.length;
 
-let totalScroll = 0
-const delay = 2000
+  // Determines how many images are shown
+  const perView = Math.ceil(findViewportWidth() / 200);
 
-imageWrapper.style.setProperty('--per-view', perView)
-for (let i = 0; i < perView; i++) {
-  imageWrapper.insertAdjacentHTML('beforeend', imageItems[i].outerHTML)
-}
+  let totalScroll = 0;
+  const delay = 2000;
 
-let autoScroll = setInterval(scrolling, delay)
-
-function scrolling() {
-  totalScroll++
-  if (totalScroll == imageLength + 1) {
-    clearInterval(autoScroll)
-    totalScroll = 1
-    imageWrapper.style.transition = '0s'
-    imageWrapper.style.left = '0'
-    autoScroll = setInterval(scrolling, delay)
+  imageWrapper.style.setProperty('--per-view', perView);
+  for (let i = 0; i < perView; i++) {
+    imageWrapper.insertAdjacentHTML('beforeend', imageItems[i].outerHTML);
   }
-  const widthEl = document.querySelector('.image-wrapper > :first-child').offsetWidth + 24
-  imageWrapper.style.left = `-${totalScroll * widthEl}px`
-  imageWrapper.style.transition = '.9s'
-}
+
+  let autoScroll = setInterval(scrolling, delay);
+
+  function scrolling() {
+    totalScroll++;
+    if (totalScroll == imageLength + 1) {
+      clearInterval(autoScroll);
+      totalScroll = 1;
+      imageWrapper.style.transition = '0s';
+      imageWrapper.style.left = '0';
+      autoScroll = setInterval(scrolling, delay);
+    }
+    const widthEl = document.querySelector('.image-wrapper > :first-child').offsetWidth + 24;
+    imageWrapper.style.left = `-${totalScroll * widthEl}px`;
+    imageWrapper.style.transition = '.9s';
+  };
+};
+

@@ -563,7 +563,7 @@ html {
   border-radius: var(--border-radius-400);
   width: 90%;
   max-width: 600px;
-  margin-top: var(--size-800);
+  margin-top: var(--size-900);
 }
 
 .form-wrapper {
@@ -612,6 +612,12 @@ input[type=submit]:hover {
 .signup-wrapper {
   flex-direction: row;
   gap: var(--size-400);
+}
+
+/* 404 */
+.error-text {
+  font-size: 10em;
+  line-height: normal;
 }
 
 
