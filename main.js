@@ -63,8 +63,6 @@ const sendToLink = function (link) {
     window.location.href = "http://www.missbraidz.com/about";
   } else if (link === 'Contact us') {
     window.location.href = "http://www.missbraidz.com/contact";
-  } else if (link === 'Explore' || 'Shop now') {
-    window.location.href = "http://www.missbraidz.com/services";
   } else if (link === 'Book now') {
     window.location.href = "http://www.missbraidz.com/bookings";
   } else if (link === 'Subscribe') {
@@ -75,6 +73,8 @@ const sendToLink = function (link) {
     return;
   } else if (link === 'Go back') {
     window.location.href = "javascript:history.back()"
+  } else if (link === 'Explore' || 'Shop now') {
+    window.location.href = "http://www.missbraidz.com/services";
   } else {
     return;
   };
