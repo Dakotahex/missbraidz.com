@@ -245,7 +245,7 @@ const selectDomElements = (parent) => {
       targetSlide = findTargetSlide(parent, 0)
     };
 
-    if (!targetDot) return;
+    if (!targetSlide) return;
 
     executeMovement(targetSlide);
   };
