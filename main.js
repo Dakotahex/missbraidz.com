@@ -153,8 +153,8 @@ findAndSetHeights()
 const selectDomElements = (parent) => {
   const track = parent.querySelector('.carousel__track');
   const slides = Array.from(track.children);
-  const dotsNav = parent.querySelector('.carousel__nav');
-  const dots = Array.from(dotsNav.children);
+  // const dotsNav = parent.querySelector('.carousel__nav');
+  // const dots = Array.from(dotsNav.children);
 
   const slideWidth = slides[0].getBoundingClientRect().width;
 
@@ -174,6 +174,7 @@ const selectDomElements = (parent) => {
 
   //   executeMovement(targetDot);
   // });
+  let targetDot;
 
   const findTargetSlide = function (parent, num) {
     let ans;
