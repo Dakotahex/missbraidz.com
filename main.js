@@ -60,20 +60,23 @@ let allButtons = document.querySelectorAll('.button');
 
 const sendToLink = function (link) {
   if (link === 'Our story') {
-    window.location.href = "http://www.missbraidz.com/about.html"
+    window.location.href = "http://www.missbraidz.com/about";
   } else if (link === 'Contact us') {
-    window.location.href = "http://www.missbraidz.com/contact.html"
+    window.location.href = "http://www.missbraidz.com/contact";
   } else if (link === 'Explore' || 'Shop now') {
-    window.location.href = "http://www.missbraidz.com/services.html"
+    window.location.href = "http://www.missbraidz.com/services";
   } else if (link === 'Book now') {
-    window.location.href = "http://www.missbraidz.com/bookings.html"
+    window.location.href = "http://www.missbraidz.com/bookings";
   } else if (link === 'Subscribe') {
-    console.log(window.location.href)
-    document.location.href = window.location.href + "#subscribe"
+    // console.log(window.location.href)
+    // document.location.href = (window.location.href + "#subscribe")
+    return;
+  } else if (link === 'Cart') {
+    return;
   } else {
     return;
-  }
-}
+  };
+};
 
 console.log(window.location.href)
 

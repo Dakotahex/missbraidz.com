@@ -555,15 +555,19 @@ html {
 }
 
 /* Form */
-.form-wrapper {
+.form-wrapper,
+.signup-wrapper {
   display: flex;
-  flex-direction: column;
   padding: var(--size-600);
   background-color: var(--clr-neutral-100);
   border-radius: var(--border-radius-400);
   width: 90%;
   max-width: 600px;
   margin-top: var(--size-800);
+}
+
+.form-wrapper {
+  flex-direction: column;
 }
 
 .label-input {
@@ -585,6 +589,7 @@ textarea {
   padding: var(--size-300);
   width: 100%;
   resize: vertical;
+  text-align: center;
 }
 
 input[type=text]:focus,
@@ -602,6 +607,14 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: var(--clr-accent-three-600);
 }
+
+/* Signup */
+.signup-wrapper {
+  flex-direction: row;
+  gap: var(--size-400);
+}
+
+
 
 /* Footer navigation */
 .primary-footer-wrapper> :nth-child(1) {
