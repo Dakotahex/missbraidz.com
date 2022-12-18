@@ -179,7 +179,7 @@ const selectDomElements = (parent) => {
     executeMovement(targetDot);
   });
 
-  const findTargetDot = function (paren, num) {
+  const findTargetDot = function (parent, num) {
     let ans;
     let x = parent.querySelector(".carousel__nav")
     let y = x.querySelector(".currentSlide")
@@ -192,10 +192,10 @@ const selectDomElements = (parent) => {
   }
 
   const executeMovement = function (targetDot) {
-    currentSlide = findCurrentSlide(track)
-    currentDot = findCurrentDot(dots)
-    targetIndex = findTargetIndex(dots, targetDot)
-    targetSlide = findTargetSlide(slides, targetIndex)
+    currentSlide = findCurrentSlide(track);
+    currentDot = findCurrentDot(dots);
+    targetIndex = findTargetIndex(dots, targetDot);
+    targetSlide = findTargetSlide(slides, targetIndex);
 
     moveToSlide(track, currentSlide, targetSlide);
     updateDots(currentDot, targetDot);
@@ -241,17 +241,17 @@ const selectDomElements = (parent) => {
   function checkDirection() {
     if (touchendX < touchstartX) {
       alert('swiped left!');
-      targetDot = findTargetDot(1)
+      targetDot = findTargetDot(parent, 1)
     };
 
     if (touchendX > touchstartX) {
       alert('swiped right!');
-      targetDot = findTargetDot(0)
+      targetDot = findTargetDot(parent, 0)
     };
 
     if (!targetDot) {
       alert('no target dot found');
-    }
+    };
     executeMovement(targetDot)
   };
 
