@@ -149,7 +149,7 @@ findAndSetHeights()
 
 // Carousel Functionality
 
-// Selecting correct dom elements
+// Selecting dom elements
 const selectDomElements = (parent) => {
   const track = parent.querySelector('.carousel__track');
   const slides = Array.from(track.children);
@@ -168,18 +168,58 @@ const selectDomElements = (parent) => {
   dotsNav.addEventListener('click', e => {
     // What indicator was clicked
     const targetDot = e.target.closest('button');
+    console.log(targetDot)
 
     if (!targetDot) return;
 
-    const currentSlide = track.querySelector('.current-slide');
-    const currentDot = dotsNav.querySelector('.current-slide');
-    const targetIndex = dots.findIndex(dot => dot === targetDot);
-    const targetSlide = slides[targetIndex];
+    // const currentSlide = track.querySelector('.current-slide');
+    // const currentDot = dotsNav.querySelector('.current-slide');
+    // const targetIndex = dots.findIndex(dot => dot === targetDot);
+    // const targetSlide = slides[targetIndex];
+    executeMovement(targetDot);
+  });
+
+  const findTargetDot = function (paren, num) {
+    let ans;
+    let x = parent.querySelector(".carousel__nav")
+    let y = x.querySelector(".currentSlide")
+    if (num > 0) {
+      ans = y.nextElementSibling;
+    } else {
+      ans = y.previousElementSibling;
+    };
+    return ans
+  }
+
+  const executeMovement = function (targetDot) {
+    currentSlide = findCurrentSlide(track)
+    currentDot = findCurrentDot(dots)
+    targetIndex = findTargetIndex(dots, targetDot)
+    targetSlide = findTargetSlide(slides, targetIndex)
 
     moveToSlide(track, currentSlide, targetSlide);
     updateDots(currentDot, targetDot);
-    findAndSetHeights()
-  })
+    findAndSetHeights();
+  }
+
+  const findCurrentSlide = function (track) {
+    return track.querySelector('.current-slide');
+  };
+
+  const findCurrentDot = function (dots) {
+    return dotsNav.querySelector('.current-slide');
+  };
+
+  const findTargetIndex = function (dots, targetDot) {
+    return dots.findIndex(dot => dot === targetDot);
+  };
+
+  const findTargetSlide = function (slides, targetIndex) {
+    return slides[targetIndex];
+  };
+
+
+
 
 
   // Move slider to target slide
@@ -187,35 +227,44 @@ const selectDomElements = (parent) => {
     track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
     currentSlide.classList.remove('current-slide');
     targetSlide.classList.add('current-slide');
-  }
+  };
 
   const updateDots = (currentDot, targetDot) => {
     currentDot.classList.remove('current-slide');
     targetDot.classList.add('current-slide');
-  }
-}
+  };
+
+  // When a user swipes left or right
+  let touchstartX = 0;
+  let touchendX = 0;
+
+  function checkDirection() {
+    if (touchendX < touchstartX) {
+      alert('swiped left!');
+      targetDot = findTargetDot(1)
+      if (!targetDot) alert('no target dot found');
+    };
+
+    if (touchendX > touchstartX) {
+      alert('swiped right!');
+      targetDot = findTargetDot(0)
+      if (!targetDot) alert('no target dot found');
+    };
+    executeMovement(targetDot)
+  };
+
+  parent.addEventListener('touchstart', e => {
+    touchstartX = e.changedTouches[0].screenX;
+  });
+
+  parent.addEventListener('touchend', e => {
+    touchendX = e.changedTouches[0].screenX;
+    checkDirection();
+  });
+};
 
 // Execute Carousel Functionality
 carousels.forEach(selectDomElements);
-
-// When a user swipes left or right
-// let touchstartX = 0;
-// let touchendX = 0;
-
-// function checkDirection() {
-//   if (touchendX < touchstartX) alert('swiped left!');
-//   if (touchendX > touchstartX) alert('swiped right!');
-// };
-
-// document.addEventListener('touchstart', e => {
-//   touchstartX = e.changedTouches[0].screenX;
-// });
-
-// document.addEventListener('touchend', e => {
-//   touchendX = e.changedTouches[0].screenX;
-//   checkDirection();
-// });
-
 
 
 
