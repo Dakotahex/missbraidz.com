@@ -56,40 +56,29 @@ window.addEventListener("scroll", moveNavbar)
 
 
 // Buttons Linking
-let allButtons = document.querySelectorAll('.button');
-
-const sendToLink = function (link) {
-  if (link === 'Our story') {
-    window.location.href = "http://www.missbraidz.com/about";
-  } else if (link === 'Contact us') {
-    window.location.href = "http://www.missbraidz.com/contact";
-  } else if (link === 'Book now') {
-    window.location.href = "http://www.missbraidz.com/bookings";
-  } else if (link === 'Subscribe') {
-    // console.log(window.location.href)
-    // document.location.href = (window.location.href + "#subscribe")
-    return;
-  } else if (link === 'Cart') {
-    return;
-  } else if (link === 'Go back') {
-    window.location.href = "javascript:history.back()"
-  } else if (link === 'Explore' || 'Shop now') {
-    window.location.href = "http://www.missbraidz.com/services";
-  } else {
-    return;
-  };
+const goToAbout = function () {
+  window.location.href = "http://www.missbraidz.com/about";
 };
 
-allButtons.forEach(button => {
-  button.addEventListener('click', (event) => {
-    let link = event.explicitOriginalTarget.childNodes[0].data;
-    console.log(link);
-    sendToLink(link);
-  });
-});
+const goToContact = function () {
+  window.location.href = "http://www.missbraidz.com/contact";
+};
 
+const goToEvents = function () {
+  window.location.href = "http://www.missbraidz.com/events";
+};
 
+const goToServices = function () {
+  window.location.href = "http://www.missbraidz.com/services";
+};
 
+const goToHome = function () {
+  window.location.href = "http://www.missbraidz.com";
+};
+
+const goToBookings = function () {
+  window.location.href = "http://www.missbraidz.com/bookings";
+};
 
 
 
