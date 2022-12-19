@@ -204,8 +204,8 @@ const selectDomElements = (parent) => {
   const executeMovement = function (targetSlide, targetDot) {
     let currentSlide = findCurrentSlide(track);
     let currentDot = findCurrentDot(dots);
-    let targetIndex = findTargetIndex(dots, targetDot);
-    let targetSlide = findTargetSlide(slides, targetIndex);
+    // let targetIndex = findTargetIndex(dots, targetDot);
+    // let targetSlide = findTargetSlide(slides, targetIndex);
 
     moveToSlide(track, currentSlide, targetSlide);
     updateDots(currentDot, targetDot)
