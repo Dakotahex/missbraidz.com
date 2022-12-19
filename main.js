@@ -250,13 +250,13 @@ const selectDomElements = (parent) => {
 
   function checkDirection() {
     if (touchendX < touchstartX) {
-      // alert('swiped left!');
+      alert('swiped left!');
       targetSlide = findTargetSlide(parent, 1);
       targetDot = findTargetDot(parent, 1);
     };
 
     if (touchendX > touchstartX) {
-      // alert('swiped right!');
+      alert('swiped right!');
       targetSlide = findTargetSlide(parent, 0);
       targetDot = findTargetDot(parent, 0);
     };
