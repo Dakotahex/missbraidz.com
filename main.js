@@ -164,16 +164,6 @@ const selectDomElements = (parent) => {
   }
   slides.forEach(setSlidePosition);
 
-  // When i click the nav indicators move to that slide
-  // dotsNav.addEventListener('click', e => {
-  //   // What indicator was clicked
-  //   const targetDot = e.target.closest('button');
-  //   console.log(targetDot);
-
-  //   if (!targetDot) return;
-
-  //   executeMovement(targetDot);
-  // });
   let targetDot;
   let targetSlide;
 
@@ -204,8 +194,6 @@ const selectDomElements = (parent) => {
   const executeMovement = function (targetSlide, targetDot) {
     let currentSlide = findCurrentSlide(track);
     let currentDot = findCurrentDot(dots);
-    // let targetIndex = findTargetIndex(dots, targetDot);
-    // let targetSlide = findTargetSlide(slides, targetIndex);
 
     moveToSlide(track, currentSlide, targetSlide);
     updateDots(currentDot, targetDot)
@@ -223,14 +211,6 @@ const selectDomElements = (parent) => {
   const findTargetIndex = function (dots, targetDot) {
     return dots.findIndex(dot => dot === targetDot);
   };
-
-  // const findTargetSlide = function (slides, targetIndex) {
-  //   return slides[targetIndex];
-  // };
-
-
-
-
 
   // Move slider to target slide
   const moveToSlide = (track, currentSlide, targetSlide) => {
@@ -316,7 +296,7 @@ if (imageWrapper != null) {
   const imageLength = imageItems.length;
 
   // Determines how many images are shown
-  const perView = Math.ceil(findViewportWidth() / 200);
+  const perView = Math.ceil(findViewportWidth() / 175);
 
   let totalScroll = 0;
   const delay = 2000;
