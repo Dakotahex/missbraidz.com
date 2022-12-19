@@ -175,6 +175,7 @@ const selectDomElements = (parent) => {
   //   executeMovement(targetDot);
   // });
   let targetDot;
+  let targetSlide;
 
   const findTargetSlide = function (parent, num) {
     let ans;
@@ -189,18 +190,18 @@ const selectDomElements = (parent) => {
   };
 
   const findTargetDot = function (parent, num) {
-    let ans;
-    let x = parent.querySelector(".carousel__nav")
-    let y = x.querySelector(".current-slide")
+    let result;
+    let i = parent.querySelector(".carousel__nav")
+    let j = i.querySelector(".current-slide")
     if (num > 0) {
-      ans = y.nextElementSibling;
+      result = j.nextElementSibling;
     } else {
-      ans = y.previousElementSibling;
+      result = j.previousElementSibling;
     };
-    return ans
+    return result;
   };
 
-  const executeMovement = function (targetSlide, tragetDot) {
+  const executeMovement = function (targetSlide, targetDot) {
     currentSlide = findCurrentSlide(track);
     currentDot = findCurrentDot(dots);
     targetIndex = findTargetIndex(dots, targetDot);
@@ -260,7 +261,8 @@ const selectDomElements = (parent) => {
       targetDot = findTargetDot(parent, 0);
     };
 
-    if (!targetSlide || !targetDot) return;
+    if (!targetSlide) return;
+    if (!targetDot) return;
 
     executeMovement(targetSlide, targetDot);
   };
