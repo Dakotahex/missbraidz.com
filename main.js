@@ -153,8 +153,8 @@ findAndSetHeights()
 const selectDomElements = (parent) => {
   const track = parent.querySelector('.carousel__track');
   const slides = Array.from(track.children);
-  // const dotsNav = parent.querySelector('.carousel__nav');
-  // const dots = Array.from(dotsNav.children);
+  const dotsNav = parent.querySelector('.carousel__nav');
+  const dots = Array.from(dotsNav.children);
 
   const slideWidth = slides[0].getBoundingClientRect().width;
 
@@ -188,13 +188,26 @@ const selectDomElements = (parent) => {
     return ans
   };
 
-  const executeMovement = function (targetSlide) {
+  const findTargetDot = function (parent, num) {
+    let ans;
+    let x = parent.querySelector(".carousel__nav")
+    let y = x.querySelector(".current-slide")
+    if (num > 0) {
+      ans = y.nextElementSibling;
+    } else {
+      ans = y.previousElementSibling;
+    };
+    return ans
+  };
+
+  const executeMovement = function (targetSlide, tragetDot) {
     currentSlide = findCurrentSlide(track);
-    // currentDot = findCurrentDot(dots);
-    // targetIndex = findTargetIndex(dots, targetDot);
-    // targetSlide = findTargetSlide(slides, targetIndex);
+    currentDot = findCurrentDot(dots);
+    targetIndex = findTargetIndex(dots, targetDot);
+    targetSlide = findTargetSlide(slides, targetIndex);
 
     moveToSlide(track, currentSlide, targetSlide);
+    updateDots(currentDot, targetDot)
     findAndSetHeights();
   };
 
@@ -202,13 +215,13 @@ const selectDomElements = (parent) => {
     return track.querySelector('.current-slide');
   };
 
-  // const findCurrentDot = function (dots) {
-  //   return dotsNav.querySelector('.current-slide');
-  // };
+  const findCurrentDot = function (dots) {
+    return dotsNav.querySelector('.current-slide');
+  };
 
-  // const findTargetIndex = function (dots, targetDot) {
-  //   return dots.findIndex(dot => dot === targetDot);
-  // };
+  const findTargetIndex = function (dots, targetDot) {
+    return dots.findIndex(dot => dot === targetDot);
+  };
 
   // const findTargetSlide = function (slides, targetIndex) {
   //   return slides[targetIndex];
@@ -225,10 +238,10 @@ const selectDomElements = (parent) => {
     targetSlide.classList.add('current-slide');
   };
 
-  // const updateDots = (currentDot, targetDot) => {
-  //   currentDot.classList.remove('current-slide');
-  //   targetDot.classList.add('current-slide');
-  // };
+  const updateDots = (currentDot, targetDot) => {
+    currentDot.classList.remove('current-slide');
+    targetDot.classList.add('current-slide');
+  };
 
   // When a user swipes left or right
   let touchstartX = 0;
@@ -237,17 +250,19 @@ const selectDomElements = (parent) => {
   function checkDirection() {
     if (touchendX < touchstartX) {
       // alert('swiped left!');
-      targetSlide = findTargetSlide(parent, 1)
+      targetSlide = findTargetSlide(parent, 1);
+      targetDot = findTargetDot(parent, 1);
     };
 
     if (touchendX > touchstartX) {
       // alert('swiped right!');
-      targetSlide = findTargetSlide(parent, 0)
+      targetSlide = findTargetSlide(parent, 0);
+      targetDot = findTargetDot(parent, 0);
     };
 
-    if (!targetSlide) return;
+    if (!targetSlide || !targetDot) return;
 
-    executeMovement(targetSlide);
+    executeMovement(targetSlide, targetDot);
   };
 
   parent.addEventListener('touchstart', e => {
