@@ -292,7 +292,7 @@ if (document.querySelector('.question')) {
 const imageWrapper = document.querySelector('.image-wrapper');
 
 if (imageWrapper != null) {
-  alert('found image wrapper')
+  // alert('found image wrapper')
   const imageItems = document.querySelectorAll('.image-wrapper > *');
   const imageLength = imageItems.length;
 
@@ -307,7 +307,7 @@ if (imageWrapper != null) {
     imageWrapper.insertAdjacentHTML('beforeend', imageItems[i].outerHTML);
   }
 
-  let autoScroll = setInterval(scrolling, delay);
+  let autoScroll = setInterval(scrolling(), delay);
 
   function scrolling() {
     totalScroll++;
@@ -316,7 +316,7 @@ if (imageWrapper != null) {
       totalScroll = 1;
       imageWrapper.style.transition = '0s';
       imageWrapper.style.left = '0';
-      autoScroll = setInterval(scrolling, delay);
+      autoScroll = setInterval(scrolling(), delay);
       alert('resetting')
     }
     const widthEl = document.querySelector('.image-wrapper > :first-child').offsetWidth + 24;
