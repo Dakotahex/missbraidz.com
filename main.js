@@ -202,10 +202,10 @@ const selectDomElements = (parent) => {
   };
 
   const executeMovement = function (targetSlide, targetDot) {
-    currentSlide = findCurrentSlide(track);
-    currentDot = findCurrentDot(dots);
-    targetIndex = findTargetIndex(dots, targetDot);
-    targetSlide = findTargetSlide(slides, targetIndex);
+    const currentSlide = findCurrentSlide(track);
+    const currentDot = findCurrentDot(dots);
+    const targetIndex = findTargetIndex(dots, targetDot);
+    const targetSlide = findTargetSlide(slides, targetIndex);
 
     moveToSlide(track, currentSlide, targetSlide);
     updateDots(currentDot, targetDot)
@@ -250,13 +250,13 @@ const selectDomElements = (parent) => {
 
   function checkDirection() {
     if (touchendX < touchstartX) {
-      alert('swiped left!');
+      // alert('swiped left!');
       targetSlide = findTargetSlide(parent, 1);
       targetDot = findTargetDot(parent, 1);
     };
 
     if (touchendX > touchstartX) {
-      alert('swiped right!');
+      // alert('swiped right!');
       targetSlide = findTargetSlide(parent, 0);
       targetDot = findTargetDot(parent, 0);
     };
