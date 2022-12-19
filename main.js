@@ -292,6 +292,7 @@ if (document.querySelector('.question')) {
 const imageWrapper = document.querySelector('.image-wrapper');
 
 if (imageWrapper != null) {
+  alert('found image wrapper')
   const imageItems = document.querySelectorAll('.image-wrapper > *');
   const imageLength = imageItems.length;
 
