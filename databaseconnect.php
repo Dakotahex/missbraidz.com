@@ -1,7 +1,7 @@
 <?php
 $servername = "missbraidz.com";
-$database = "u123456789_missbraidz";
-$username = "u123456789_dakota";
+$database = "u243262170_missbraidz";
+$username = "u243262170_dakota";
 $password = "Whitewero104#";
 
 // Create connection
