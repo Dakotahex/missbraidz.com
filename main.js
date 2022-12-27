@@ -45,10 +45,8 @@ const checkMenuStatus = function () {
 
   if (menuStatus == true) {
     window.removeEventListener("scroll", moveNavbar)
-    console.log('not moving navbar')
   } else {
     window.addEventListener("scroll", moveNavbar)
-    console.log('moving navbar')
   }
 }
 
@@ -317,12 +315,10 @@ if (imageWrapper != null) {
       imageWrapper.style.transition = '0s';
       imageWrapper.style.left = '0';
       autoScroll = setInterval(scrolling(), delay);
-      alert('resetting')
     }
     const widthEl = document.querySelector('.image-wrapper > :first-child').offsetWidth + 24;
     imageWrapper.style.left = `-${totalScroll * widthEl}px`;
     imageWrapper.style.transition = '.9s';
-    alert('moving')
   };
 };
 

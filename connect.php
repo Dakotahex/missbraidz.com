@@ -19,6 +19,8 @@
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }
 
+  mysqli_close($conn);
+
   // header("location: ../contact.html?message=successs")
 
   // If subscribe was clicked also create user
