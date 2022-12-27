@@ -14,7 +14,7 @@
     die('Connection Failed : '.$conn->connect_error);
   }
 
-  $sql = "INSERT INTO website_queries (firstName, lastName, email, message, date) VALUES ('$firstName', '$lastName', '$email', '$message', '$date')";
+  $sql = "INSERT INTO website_queries (firstName, lastName, email, message, date, subscribed) VALUES ('$firstName', '$lastName', '$email', '$message', '$date', '$subscribed')";
 
   if (mysqli_query($conn, $sql)) {
     header("location: ../contact?message=successs");
