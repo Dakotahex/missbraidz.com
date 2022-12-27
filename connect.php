@@ -1,26 +1,19 @@
 <?php
-  require 'login.php';
-  $table = "website_queries";
+  include_once 'includes/dbh.php';
 
   $firstName = $_POST['firstName'];
   $lastName = $_POST['lastName'];
   $message = $_POST['message'];
 
-  // Create connection
-
-  $conn = mysqli_connect($servername, $username, $password, $database, $table);
-
   //Database connection
   if($conn->connect_error){
     die('Connection Failed : '.$conn->connect_error);
   }else{
-    $stmt = $conn->prepare("insert into website_qureies(firstName, lastName, message) values(?, ?, ?)");
-    $stmt->bind_param("sss", $firtName, $lastName, $message);
-    $stmt->execute();
-    echo "Message sent!";
-    $stmt->close();
-    $conn->close();
+    $sql = "INSERT INTO website_queries(firstName, lastName, message) VALUES ($firstName, $lastName, $message);";
+    mysqli_query($conn, $sql);
   }
+
+  header("location: ../index.html?message=successs")
 
   // If subscribe was clicked also create user
 ?>
