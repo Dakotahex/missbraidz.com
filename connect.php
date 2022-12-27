@@ -9,11 +9,11 @@
   if($conn->connect_error){
     die('Connection Failed : '.$conn->connect_error);
   }else{
-    $sql = "INSERT INTO website_queries(firstName, lastName, message) VALUES ($firstName, $lastName, $message);";
+    $sql = "INSERT INTO website_queries (firstName, lastName, message) VALUES ($firstName, $lastName, $message);";
     mysqli_query($conn, $sql);
   }
 
-  // header("location: ../index.html?message=successs")
+  header("location: ../contact.html?message=successs")
 
   // If subscribe was clicked also create user
 ?>
