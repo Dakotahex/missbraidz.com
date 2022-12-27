@@ -13,7 +13,7 @@
     mysqli_query($conn, $sql);
   }
 
-  header("location: ../index.html?message=successs")
+  // header("location: ../index.html?message=successs")
 
   // If subscribe was clicked also create user
 ?>
