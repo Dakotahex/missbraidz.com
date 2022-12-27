@@ -9,12 +9,17 @@
   //Database connection
   if($conn->connect_error){
     die('Connection Failed : '.$conn->connect_error);
-  }else{
-    $sql = "INSERT INTO website_queries (firstName, lastName, email, message) VALUES ('$firstName', '$lastName', '$email', '$message');";
-    mysqli_query($conn, $sql);
   }
 
-  header("location: ../contact.html?message=successs")
+  $sql = "INSERT INTO website_queries (firstName, lastName, email, message) VALUES ('$firstName', '$lastName', '$email', '$message')";
+
+  if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully";
+  } else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+  }
+
+  // header("location: ../contact.html?message=successs")
 
   // If subscribe was clicked also create user
 ?>
