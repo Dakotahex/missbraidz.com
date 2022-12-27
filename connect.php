@@ -1,10 +1,14 @@
 <?php
-  include 'databaseconnect.php';
+  include 'login.php';
   $table = "website_queries";
 
   $firstName = $_POST['firstName'];
   $lastName = $_POST['lastName'];
   $message = $_POST['message'];
+
+  // Create connection
+
+  $conn = mysqli_connect($servername, $username, $password, $database, $table);
 
   //Database connection
   if($conn->connect_error){
