@@ -1,5 +1,5 @@
 <?php
-  include 'login.php';
+  require 'login.php';
   $table = "website_queries";
 
   $firstName = $_POST['firstName'];
