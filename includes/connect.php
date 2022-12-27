@@ -6,7 +6,7 @@
   $lastName = $_POST['lastName'];
   $email = $_POST['email'];
   $message = $_POST['message'];
-  $subscribe = $_POST['subscribe?'];
+  $subscribe = intVal($_POST['subscribe?']);
   $date = date('Y-m-d h:i:s');
 
   //Database connection
@@ -14,7 +14,7 @@
     die('Connection Failed : '.$conn->connect_error);
   }
 
-  $sql = "INSERT INTO website_queries (firstName, lastName, email, message, date, subscribed) VALUES ('$firstName', '$lastName', '$email', '$message', '$date', '$subscribed')";
+  $sql = "INSERT INTO website_queries (firstName, lastName, email, message, date, subscribed) VALUES ('$firstName', '$lastName', '$email', '$message', '$date', $subscribe)";
 
   if (mysqli_query($conn, $sql)) {
     header("location: ../contact?message=successs");
