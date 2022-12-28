@@ -1,6 +1,6 @@
 <?php
   include_once 'dbh.php';
-  date_default_timezone_set('Australia/Perth');
+  date_default_timezone_set('UTC');
 
   $firstName = $_POST['firstName'];
   $lastName = $_POST['lastName'];
@@ -14,7 +14,7 @@
     die('Connection Failed : '.$conn->connect_error);
   }
 
-  $sql = "INSERT INTO website_queries (firstName, lastName, email, message, date, subscribed) VALUES ('$firstName', '$lastName', '$email', '$message', $date, $subscribe)";
+  $sql = "INSERT INTO website_queries (firstName, lastName, email, message, date, subscribed) VALUES ('$firstName', '$lastName', '$email', '$message', '$date', $subscribe)";
 
   if (mysqli_query($conn, $sql)) {
     header("location: ../contact?message=successs");
