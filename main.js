@@ -322,3 +322,10 @@ if (imageWrapper != null) {
   };
 };
 
+
+// Google captcha v3
+function onSubmit(token) {
+  document.getElementById("#contact-form").submit();
+}
+
+

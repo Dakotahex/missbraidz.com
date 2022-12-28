@@ -608,6 +608,14 @@ input[type=submit]:hover {
   background-color: var(--clr-accent-three-600);
 }
 
+.columns-four-one {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  justify-content: center;
+  max-width: 300px;
+  margin: auto;
+}
+
 /* Signup */
 .signup-wrapper {
   flex-direction: row;
@@ -820,6 +828,12 @@ input[type=submit]:hover {
 
 .justify-right {
   justify-content: end;
+  text-align: end;
+}
+
+.justify-left {
+  justify-content: start;
+  text-align: start;
 }
 
 .align-right {
