@@ -323,9 +323,9 @@ if (imageWrapper != null) {
 };
 
 
-// Google captcha v3
-function onSubmit(token) {
-  document.getElementById("#contact-form").submit();
-}
+// // Google captcha v3
+// var onloadCallback = function () {
+//   alert("grecaptcha is ready!");
+// };
 
 

@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
     rel="stylesheet">
-  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 </head>
 
 <body>
@@ -60,7 +60,7 @@
 
     <div class="container">
       <div class="centered">
-        <form id="contact-form" action="includes/connect.php" method="POST" class="form-wrapper">
+        <form id="contact-form" action="includes/g-captcha.php" method="POST" class="form-wrapper">
 
           <div class="even-columns">
             <div class="label-input flow">
@@ -83,8 +83,8 @@
             <label for="message">Your message</label>
             <textarea id="message" name="message" placeholder="" style="height: 200px"></textarea>
 
-            <input class="button g-recaptcha" data-sitekey="6LdUI7MjAAAAACALXByitbCBbYSZuixDWgZ5ggQG"
-              data-callback='onSubmit' data-action='submit' type="submit" value="Send">
+            <input class="button" type="submit" value="Send" name="submit_form">
+
           </div>
 
           <div class="columns-four-one" style="margin-top: var(--size-600)">
