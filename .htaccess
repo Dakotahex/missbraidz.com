@@ -12,7 +12,9 @@ RewriteCond %{REQUEST_FILENAME}\.html -f
 # Here we show the page witb .html extension
 RewriteRule ^(.*)$ $1.html [NC, L]
 
-AuthType Basic
-AuthName "restricted area"
-AuthUserFile includes/.htpasswd
-require valid-user
+#AuthType Basic
+#AuthName "restricted area"
+#AuthUserFile includes/.htpasswd
+#require valid-user
+
+Order deny,allow Deny from all Allow from 121.200.42.24
