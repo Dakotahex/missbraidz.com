@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
     rel="stylesheet">
-  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -82,6 +82,9 @@
           <div class="label-input flow" style="margin-top: var(--size-600)">
             <label for="message">Your message</label>
             <textarea id="message" name="message" placeholder="" style="height: 200px"></textarea>
+
+            <div class="g-recaptcha" data-sitekey="6LcTL7MjAAAAAI-kqtMfpPXgzwqITD-0Ze414DM2"></div>
+            <br />
 
             <input class="button" type="submit" value="Send" name="submit_form">
 
