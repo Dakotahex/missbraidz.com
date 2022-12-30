@@ -15,17 +15,16 @@
 
       // echo "<pre>";print_r($response);echo "</pre>";
 
-      if($response->success = 1)
-      {
-        // echo "Your Information was valid";
-        return TRUE;
-      }
-      else
-      {
-        // echo "You are a robot and we don't like robots.";
-        return FALSE;
-      };
-    };
+      return recaptchaSuccess($response);
+    }
   };
 
+  function recaptchaSuccess($response)
+  {
+    if($response->success == 1)
+    {
+      // echo "Your Information was valid";
+      return TRUE;
+    }
+  }
 ?>
