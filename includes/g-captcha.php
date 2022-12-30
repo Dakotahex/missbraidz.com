@@ -13,7 +13,7 @@
       $response = file_get_contents($url.'?secret='.$private_key.'&response='.$response_key.'&remoteip='.$_SERVER['REMOTE_ADDR']);
       $response = json_decode($response);
 
-      // echo "<pre>";print_r($response);echo "</pre>";
+      echo "<pre>";print_r($response);echo "</pre>";
 
       return recaptchaSuccess($response);
     }
