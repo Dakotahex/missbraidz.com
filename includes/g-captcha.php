@@ -5,11 +5,11 @@
   $url = "https://www.google.com/recaptcha/api/siteverify";
 
 
-  function recaptchaTest()  {
-    if(array_key_exists('submit_form',$_POST))
+  function recaptchaTest($post)  {
+    if(array_key_exists('submit_form',$post))
     {
-      // echo "<pre>";print_r($_POST);echo "</pre>";
-      $response_key = $_POST['g-recaptcha-response'];
+      echo "<pre>";print_r($_POST);echo "</pre>";
+      $response_key = $post['g-recaptcha-response'];
       $response = file_get_contents($url.'?secret='.$private_key.'&response='.$response_key.'&remoteip='.$_SERVER['REMOTE_ADDR']);
       $response = json_decode($response);
 
@@ -19,6 +19,7 @@
     }
   };
 
+
   function recaptchaSuccess($response)
   {
     if($response->success == 1)
@@ -27,4 +28,5 @@
       return TRUE;
     }
   }
+
 ?>
