@@ -42,8 +42,10 @@
     $headers = "From: $email \r\n";
     $headers .= "Reply-To: $email \r\n";
 
-    mail($to, $email_subject, $email_body, $headers);
-    echo "email sent!";
+    if(mail($to, $email_subject, $email_body, $headers))
+    {
+      echo "email sent!";
+    }
   }
 
   ?>
