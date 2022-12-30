@@ -1,6 +1,7 @@
 <?php
   include_once 'dbh.php';
   include 'g-captcha.php';
+  include 'send-email.php';
   date_default_timezone_set('UTC');
 
   if (recaptchaTest() == TRUE)
@@ -21,6 +22,7 @@
 
     if (mysqli_query($conn, $sql)) {
       header("location: ../contact?message=successs");
+      sendEmail($firstName, $lastName, $email, $message);
     } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
