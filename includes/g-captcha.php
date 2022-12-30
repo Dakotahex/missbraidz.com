@@ -1,13 +1,13 @@
 <?php
 
-  $public_key = "6LcTL7MjAAAAAI-kqtMfpPXgzwqITD-0Ze414DM2";
-  $private_key = "6LcTL7MjAAAAACi8yteXhzSXKAHKGfIpDXeZq3Dx";
-  $url = "https://www.google.com/recaptcha/api/siteverify";
-
-
   function recaptchaTest()  {
     if(array_key_exists('submit_form',$_POST))
     {
+      $public_key = "6LcTL7MjAAAAAI-kqtMfpPXgzwqITD-0Ze414DM2";
+      $private_key = "6LcTL7MjAAAAACi8yteXhzSXKAHKGfIpDXeZq3Dx";
+      $url = "https://www.google.com/recaptcha/api/siteverify";
+
+
       echo "<pre>";print_r($_POST);echo "</pre>";
       $response_key = $_POST['g-recaptcha-response'];
 
