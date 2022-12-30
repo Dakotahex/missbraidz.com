@@ -21,8 +21,8 @@
     $sql = "INSERT INTO website_queries (firstName, lastName, email, createdAt, message, subscribed) VALUES ('$firstName', '$lastName', '$email', '$createdAt', '$message', $subscribe)";
 
     if (mysqli_query($conn, $sql)) {
-      header("location: ../contact?message=successs");
       sendEmail($firstName, $lastName, $email, $message);
+      // header("location: ../contact?message=successs");
     } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
