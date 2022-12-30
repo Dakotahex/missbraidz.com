@@ -10,7 +10,9 @@
     {
       echo "<pre>";print_r($_POST);echo "</pre>";
       $response_key = $_POST['g-recaptcha-response'];
-      echo "<pre>";print_r($response_key);echo "</pre>";
+
+      echo "<pre>";print_r($private_key);echo "</pre>";
+      echo "<pre>";print_r($url);echo "</pre>";
 
       $response = file_get_contents($url.'?secret='.$private_key.'&response='.$response_key.'&remoteip='.$_SERVER['REMOTE_ADDR']);
       echo "<pre>";print_r($response);echo "</pre>";
@@ -26,7 +28,7 @@
 
   function recaptchaSuccess($response)
   {
-    if($response->success == 1)
+    if($response->success == true)
     {
       // echo "Your Information was valid";
       return TRUE;
