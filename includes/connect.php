@@ -3,9 +3,7 @@
   include 'g-captcha.php';
   date_default_timezone_set('UTC');
 
-  $post = $_POST;
-
-  if (recaptchaTest($post) == TRUE)
+  if (recaptchaTest() == TRUE)
   {
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
