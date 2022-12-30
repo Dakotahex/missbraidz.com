@@ -22,7 +22,7 @@
 
     if (mysqli_query($conn, $sql)) {
       sendEmail($firstName, $lastName, $email, $message);
-      // header("location: ../contact?message=successs");
+      header("location: ../contact?message=successs");
     } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }

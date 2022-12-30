@@ -1,36 +1,36 @@
 <?php
 
-// function IsInjected($str)
-// {
-//   $injections = array('(\n+)',
-//   '(\r+)',
-//   '(\t+)',
-//   '(%0A+)',
-//   '(%0D+)',
-//   '(%08+)',
-//   '(%09+)'
-//            );
+function IsInjected($str)
+{
+  $injections = array('(\n+)',
+  '(\r+)',
+  '(\t+)',
+  '(%0A+)',
+  '(%0D+)',
+  '(%08+)',
+  '(%09+)'
+           );
 
-//            $inject = join('|', $injections);
-//            $inject = "/$inject/i";
+           $inject = join('|', $injections);
+           $inject = "/$inject/i";
 
-//            if(preg_match($inject,$str))
-//            {
-//              return true;
-//             }
-//     else
-//     {
-//       return false;
-//     }
-//   }
+           if(preg_match($inject,$str))
+           {
+             return true;
+            }
+    else
+    {
+      return false;
+    }
+  }
 
   function sendEmail($firstName, $lastName, $email, $message)
   {
-    // if(IsInjected($email))
-    // {
-    //   echo "Bad email value!";
-    //   exit;
-    // }
+    if(IsInjected($email))
+    {
+      echo "Bad email value!";
+      exit;
+    }
 
     $email_from = $email;
     $email_subject = "New enquiry from {$firstName} {$lastName}";
@@ -42,10 +42,7 @@
     $headers = "From: $email \r\n";
     $headers .= "Reply-To: $email \r\n";
 
-    if(mail($to, $email_subject, $email_body, $headers))
-    {
-      echo "email sent!";
-    }
+    mail($to, $email_subject, $email_body, $headers);
   }
 
   ?>
