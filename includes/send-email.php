@@ -38,7 +38,7 @@
     "Here is the message:\n {$message}";
 
 
-    $to = "enquiries@missbraidz.com";
+    $to = "enquiries@missbraidz.com, dakota.colborne@gmail.com";
     $headers = "From: $email \r\n";
     $headers .= "Reply-To: $email \r\n";
 
