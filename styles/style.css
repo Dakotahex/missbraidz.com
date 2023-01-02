@@ -556,17 +556,18 @@ html {
 
 /* Form */
 .form-wrapper,
-.signup-wrapper {
-  display: flex;
+.signup-wrapper,
+.bookings-section {
   padding: var(--size-600);
   background-color: var(--clr-neutral-100);
   border-radius: var(--border-radius-400);
-  width: 90%;
-  max-width: 600px;
   margin-top: var(--size-900);
 }
 
 .form-wrapper {
+  display: flex;
+  width: 90%;
+  max-width: 600px;
   flex-direction: column;
 }
 
@@ -614,6 +615,44 @@ input[type=submit]:hover {
   justify-content: center;
   max-width: 300px;
   margin: auto;
+}
+
+/* Bookings */
+.bookings-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--size-600);
+  max-width: 1000px;
+  margin: auto;
+}
+
+.bookings-section {
+  text-align: center;
+}
+
+.bookings-packages {
+  display: flex;
+  flex-direction: column;
+}
+
+.calender-wrapper {
+  height: 300px;
+  background-color: var(--clr-white);
+  border: var(--border-300);
+  border-radius: var(--border-radius-400);
+  padding: var(--size-400);
+}
+
+.drawer {
+  width: 100%;
+}
+
+.drawer-content {
+  display: none;
+}
+
+.drawer-content[data-visible] {
+  display: flex;
 }
 
 /* Signup */
@@ -791,6 +830,16 @@ input[type=submit]:hover {
   gap: var(--size-600);
   align-items: center;
   margin: auto;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
 }
 
 .swapped {

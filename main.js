@@ -284,6 +284,29 @@ if (document.querySelector('.question')) {
 };
 
 
+if (document.querySelector('.drawer')) {
+
+  // Selects all buttons
+  document.querySelectorAll('.drawer').forEach(function (e) {
+    console.log('hey')
+
+    // Bind click events to each e
+    e.addEventListener('click', function (i) {
+      console.log('hey again')
+
+      // Check for child element
+      if (i.target.parentNode.querySelector('.drawer-content')) {
+        let drawerContent = i.target.parentNode.querySelector('.drawer-content');
+        drawerContent.hasAttribute("data-visible")
+          ? e.setAttribute('aria-expanded', false)
+          : e.setAttribute('aria-expanded', true);
+        drawerContent.toggleAttribute('data-visible');
+      };
+    });
+  });
+};
+
+
 
 
 // Loop
@@ -321,11 +344,5 @@ if (imageWrapper != null) {
     imageWrapper.style.transition = '.9s';
   };
 };
-
-
-// // Google captcha v3
-// var onloadCallback = function () {
-//   alert("grecaptcha is ready!");
-// };
 
 
