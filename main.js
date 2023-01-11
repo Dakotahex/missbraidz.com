@@ -288,7 +288,6 @@ if (document.querySelector('.drawer')) {
 
   // Selects all buttons
   document.querySelectorAll('.drawer').forEach(function (e) {
-    console.log('hey')
 
     // Bind click events to each e
     e.addEventListener('click', function (i) {

@@ -46,6 +46,7 @@
 </body>
 
 <main>
+  <div id="app"></div>
 
   <section class="padding-block-900">
     <div class="container">
@@ -64,15 +65,6 @@
           <div class="flow">
             <h2 class="secondary-header">Available times</h2>
             <p class="secondary-body">Some text regarding what days are available for booking</p>
-
-            <div class="calender-wrapper">
-              <h3 class="primary-body">October</h3>
-              <div class="calender"></div>
-            </div>
-
-            <div>
-              <button class="button white">Select date</button>
-            </div>
           </div>
 
         </div>
@@ -108,15 +100,12 @@
                 </button>
               </li>
             </ul>
-
-
-
             <input class="button" type="submit" value="Confirm Package">
           </div>
 
         </div>
-        </di>
       </form>
+    </div>
 
   </section>
 
@@ -263,5 +252,6 @@
 </footer>
 
 <script src="main.js"></script>
+<script data-main="node_moudels/bookings.js" src="node_modules/requirejs/"></script>
 
 </html>

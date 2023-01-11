@@ -1,0 +1,24 @@
+{
+  "name": "missbraidz.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dakotahex/missbraidz.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dakotahex/missbraidz.com/issues"
+  },
+  "homepage": "https://github.com/Dakotahex/missbraidz.com#readme",
+  "dependencies": {
+    "dayjs": "^1.11.7",
+    "requirejs": "^2.3.6"
+  }
+}
